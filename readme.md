@@ -2,4 +2,4 @@
 
 # Section 1: Working with database
 
-# 5. Sửa lại migrate và thêm entry và transfer database 
+# 6. A clean way to implement database transaction in Golang
