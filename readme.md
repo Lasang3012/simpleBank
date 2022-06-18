@@ -2,4 +2,4 @@
 
 # Section 1: Working with database
 
-# 8. How to avoid deadlock in DB transaction? Queries order matters!
+# 9. Deeply understand transaction isolation levels & read phenomena
