@@ -111,7 +111,7 @@ func TestTransferTx(t *testing.T) {
 
 	fmt.Println(">>> after:", updateAccount1.Balance, updateAccount2.Balance)
 	require.Equal(t, account1.Balance-int64(n)*amount, updateAccount1.Balance)
-	require.Equal(t, account1.Balance+int64(n)*amount, updateAccount2.Balance)
+	require.Equal(t, account2.Balance+int64(n)*amount, updateAccount2.Balance)
 
 }
 

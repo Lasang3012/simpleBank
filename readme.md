@@ -2,4 +2,4 @@
 
 # Section 1: Working with database
 
-# 7. DB transaction lock & How to handle deadlock in Golang
+# 8. How to avoid deadlock in DB transaction? Queries order matters!
