@@ -19,7 +19,7 @@ var testDB *sql.DB
 
 func TestMain(m *testing.M) {
 	var err error
-	
+
 	testDB, err = sql.Open(dbDriver, dbSource)
 	if err != nil {
 		log.Fatal("cannot connect to db:", err)
@@ -29,3 +29,18 @@ func TestMain(m *testing.M) {
 
 	os.Exit(m.Run())
 }
+
+// var err error
+// 	config, err := util.LoadConfig("../..")
+// 	if err != nil {
+// 		log.Fatal("cannot load config:", err)
+// 	}
+
+// 	testDB, err = sql.Open(config.DBDriver, config.DBSource)
+// 	if err != nil {
+// 		log.Fatal("cannot connect to db:", err)
+// 	}
+
+// 	testQueries = New(testDB)
+
+// 	os.Exit(m.Run())

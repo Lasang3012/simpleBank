@@ -2,4 +2,4 @@
 
 # Section 1: Working with database
 
-# 6. A clean way to implement database transaction in Golang
+# 6. A clean way to implement database transaction in Golang - 02
