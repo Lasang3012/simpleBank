@@ -1,5 +1,18 @@
 postgres:
-    docker run --name postgres12 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+    docker run --name postgres12 -p 5433:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+
+--> POSTGRES_USER=root -e POSTGRES_PASSWORD=secret : cái này là dùng điền vào khi vào tablePlus
+    - VD name = root và password = secret
+
+Run migration-up :
+    migrate -path db/migration -database "postgresql://postgres:123456@localhost:5432/postgres?sslmode=disable" -verbose up
+    ( postgres:123456 -> postgres: là root (POSTGRES_USER ở trên) và 123456: là secret (POSTGRES_PASSWORD ở trên)
+        --> đút lại là như sau:
+        migrate -path db/migration -database "postgresql://root:secret@localhost:5433/simple_bank?sslmode=disable" -verbose up
+    )
+
+Run migration-down :
+    migrate -path db/migration -database "postgresql://postgres:123456@localhost:5432/postgres?sslmode=disable" -verbose down
 
 Create db/migrate:
     migrate create -ext sql -dir db/migration -seq init_schema
@@ -11,13 +24,9 @@ dropdb:
     docker exec -it postgres12 dropdb simple_bank
 
 Entry to database simple_bank
-    docker exec -it postgres12 psql -U root simple_bank
+    docker exec -it postgres12 psql -U root -d simple_bank
 
-Run migration-up :
-    migrate -path db/migration -database "postgresql://postgres:123456@localhost:5432/postgres?sslmode=disable" -verbose up
 
-Run migration-down :
-    migrate -path db/migration -database "postgresql://postgres:123456@localhost:5432/postgres?sslmode=disable" -verbose down
 
 Create file sqlc :
     .\sqlc init ( .\sqlc version )

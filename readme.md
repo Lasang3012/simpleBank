@@ -2,4 +2,4 @@
 
 # Section 1: Working with database
 
-# 6. A clean way to implement database transaction in Golang - 02
+# 7. DB transaction lock & How to handle deadlock in Golang
