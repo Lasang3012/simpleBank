@@ -2,4 +2,4 @@
 
 # Section 2: Building RESTful HTTP JSON API
 
-# 16. How to handle DB errors in Golang correctly
+# 17. How to securely store passwords? Hash password in Go with Bcrypt!
