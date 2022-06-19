@@ -2,4 +2,4 @@
 
 # Section 2: Building RESTful HTTP JSON API
 
-# 14. Implement transfer money API with a custom params validator
+# 15. Add users table with unique & foreign key constraints in PostgreSQL

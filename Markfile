@@ -11,8 +11,14 @@ Run migration-up :
         migrate -path db/migration -database "postgresql://root:secret@localhost:5433/simple_bank?sslmode=disable" -verbose up
     )
 
-Run migration-down :
+Run migrationup1  :
+    migrate -path db/migration -database "postgresql://root:secret@localhost:5433/simple_bank?sslmode=disable" -verbose up 1
+
+Run migrationdown :
     migrate -path db/migration -database "postgresql://root:secret@localhost:5433/simple_bank?sslmode=disable" -verbose down
+
+Run migrationdown1 :
+    migrate -path db/migration -database "postgresql://root:secret@localhost:5433/simple_bank?sslmode=disable" -verbose down 1
 
 Create db/migrate:
     migrate create -ext sql -dir db/migration -seq init_schema
@@ -44,4 +50,4 @@ generate mock file:
     go get github.com/golang/mock
     mockgen -destination db/mock/store.go github.com/techshool/simplebank/db/sqlc Store
 
-.PHONY: postgres createdb dropdb migration-up migration-down test server
+.PHONY: postgres createdb dropdb migrationup migrationdown test server migrationup1 migrationdown1
