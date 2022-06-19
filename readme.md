@@ -2,4 +2,4 @@
 
 # Section 1: Working with database
 
-# 9. Deeply understand transaction isolation levels & read phenomena
+# 10. Setup Github Actions for Golang + Postgres to run automated tests
