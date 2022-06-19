@@ -44,7 +44,6 @@ func (server *Server) createTransfer(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, account)
-
 }
 
 func (server *Server) validAccount(ctx *gin.Context, accountID int64, currency string) bool {
