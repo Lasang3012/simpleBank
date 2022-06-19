@@ -47,7 +47,11 @@ server:
     go run main.go
 
 generate mock file:
+
     go get github.com/golang/mock
     mockgen -destination db/mock/store.go github.com/techshool/simplebank/db/sqlc Store
+    
+    - Change name of mock :
+        mockgen -package mockdb -destination db/mock/store.go github.com/techshool/simplebank/db/sqlc Store
 
 .PHONY: postgres createdb dropdb migrationup migrationdown test server migrationup1 migrationdown1

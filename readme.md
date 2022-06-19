@@ -2,4 +2,4 @@
 
 # Section 2: Building RESTful HTTP JSON API
 
-# 15. Add users table with unique & foreign key constraints in PostgreSQL
+# 16. How to handle DB errors in Golang correctly
