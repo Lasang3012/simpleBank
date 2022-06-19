@@ -2,4 +2,4 @@
 
 # Section 2: Building RESTful HTTP JSON API
 
-# 11. Implement RESTful HTTP API in Go using Gin
+# 12. Load config from file & environment variables in Go with Viper
