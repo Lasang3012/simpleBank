@@ -26,8 +26,6 @@ dropdb:
 Entry to database simple_bank
     docker exec -it postgres12 psql -U root -d simple_bank
 
-
-
 Create file sqlc :
     .\sqlc init ( .\sqlc version )
 
@@ -36,33 +34,10 @@ Chạy này thì mới tạo được file trong sqlc:
     docker run --rm -v ${pwd}:/src -w /src kjconroy/sqlc init
     docker run --rm -v ${pwd}:/src -w /src kjconroy/sqlc generate
 
-    (
-        i think your volume mapping -v parameter isn't correct.
-        it must map your current_folder/src to /src inside the container
-        docker run --rm -v "%cd%:/src" -w /src kjconroy/sqlc generate
-
-        can you try with %cd%?
-        i know a student who make it work with this command in the Makefile:
-        sqlc:
-            docker run --rm -v "$(CURDIR):/src" -w //src kjconroy/sqlc generate
-        some other students make it work by using WSL:
-        - Setup WSL
-        https://docs.microsoft.com/en-us/windows/wsl/install-win10
-        - And run the linux binary of sqlc like you would normally run an executable.
-        wsl sqlc generate
-        or
-        root@LAPTOP-PFVT9C7K:/mnt/c/Git/sqlc_1.12.0_linux_amd64# ./sqlc generate -f "../study/simple-bank/sqlc.yaml"
-
-        other students run this directly in the PowerShell:
-        docker run --rm -v ${pwd}:/src -w /src kjconroy/sqlc version
-        docker run --rm -v ${pwd}:/src -w /src kjconroy/sqlc init
-        docker run --rm -v ${pwd}:/src -w /src kjconroy/sqlc generate
-
-        can you try those solutions and tell me which one works for you?
-        i will try to find a Windows laptop and see how it works later
-    )
-
 test:
     go test -v -cover ./...
 
-.PHONY: postgres createdb dropdb migration-up migration-down test
+server:
+    go run main.go
+
+.PHONY: postgres createdb dropdb migration-up migration-down test server
