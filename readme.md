@@ -2,4 +2,4 @@
 
 # Section 2: Building RESTful HTTP JSON API
 
-# 18. How to write stronger unit tests with a custom gomock matcher
+# 19. Why PASETO is better than JWT for token-based authentication?
