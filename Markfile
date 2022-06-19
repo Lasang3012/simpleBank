@@ -40,4 +40,8 @@ test:
 server:
     go run main.go
 
+generate mock file:
+    go get github.com/golang/mock
+    mockgen -destination db/mock/store.go github.com/techshool/simplebank/db/sqlc Store
+
 .PHONY: postgres createdb dropdb migration-up migration-down test server
