@@ -2,4 +2,4 @@
 
 # Section 2: Building RESTful HTTP JSON API
 
-# 21. Implement login user API that returns PASETO or JWT access token in Go
+# 22. Implement authentication middleware and authorization rules in Golang using Gin
